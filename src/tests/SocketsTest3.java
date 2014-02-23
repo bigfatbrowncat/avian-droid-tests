@@ -29,6 +29,7 @@ public class SocketsTest3 {
 					String read = null;
 					while ((read = br.readLine()) != null && !read.equals("")) {
 						System.out.println(read);
+						len += read.length();
 					}
 
 					
