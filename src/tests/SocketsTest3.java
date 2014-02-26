@@ -31,22 +31,6 @@ public class SocketsTest3 {
 						System.out.println(read);
 						len += read.length();
 					}
-
-					
-				     /*int rr;
-				     StringBuilder sb = new StringBuilder();
-				     char p = 0;
-				     char pp = 0;
-				     char ppp = 0;
-				     while ((rr = conn.getInputStream().read()) != -1) {
-				      sb.append((char)rr);
-				      System.out.print((char)rr);
-				      if ((char)rr == '\n' && p == '\r' && pp == '\n' && ppp == '\r') break;
-				      ppp = pp;
-				      pp = p;
-				      p = (char)rr;
-				     }*/
-					
 					
 					System.out.println("Request read successfully. " + len
 							+ " chars read. Responding...");
