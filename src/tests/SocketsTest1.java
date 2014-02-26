@@ -15,7 +15,7 @@ public class SocketsTest1 {
 
 	public static void issue() throws IOException {
 		System.out.println("Requesting...");
-		try (Socket sock = new Socket("ya.ru", 80)) {
+		try (Socket sock = new Socket("intel.com", 80)) {
 			System.out.println("Connected");
 			BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(sock.getOutputStream()));
 			String request = "GET /?gws_rd=cr HTTP/1.1\r\n" + "Host: ya.ru\r\n"
