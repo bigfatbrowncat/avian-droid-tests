@@ -13,7 +13,7 @@ import java.net.UnknownHostException;
  * Test HTTP-server
  * @author imizus
  */
-public class SocketsTest3 {
+public class SocketsTestDumbHttp {
 
 	public static void issue() throws UnknownHostException, IOException {
 		int counter = 0;
@@ -21,7 +21,8 @@ public class SocketsTest3 {
 		try (ServerSocket sock = new ServerSocket(8080)) {
 
 			while (true) {
-				try (Socket conn = sock.accept()) {
+				Socket conn = sock.accept();
+				{
 					BufferedReader br = new BufferedReader(
 							new InputStreamReader(conn.getInputStream()));
 					int len = 0;
@@ -38,7 +39,7 @@ public class SocketsTest3 {
 					BufferedWriter bw = new BufferedWriter(
 							new OutputStreamWriter(conn.getOutputStream()));
 
-					String content = "<html><body><h2>Hello, world!</h2>This is small Avian-based super dumb http-server. It's answered "
+					String content = "<html><body><h2>Hello, world!</h2>This is small, super dumb http-server. It's answered "
 							+ counter + " requests already.</body></html>\r\n";
 					counter++;
 
@@ -52,6 +53,7 @@ public class SocketsTest3 {
 					bw.write(content);
 					System.out.println("Closing the output");
 					bw.close();
+					conn.close();
 				}
 			}
 		}
