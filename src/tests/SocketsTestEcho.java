@@ -12,7 +12,7 @@ import java.net.UnknownHostException;
 /**
  * Echo-server/client talks to itself
  */
-public class SocketsTest2 {
+public class SocketsTestEcho {
 
 	public static void issue() throws UnknownHostException, IOException, InterruptedException {
 
