@@ -44,8 +44,6 @@ public class SimpleFrameworkHttp implements Container {
 		Connection connection = new SocketConnection(server);
 		SocketAddress address = new InetSocketAddress(8080);
 
-		System.out.println("before connect");
 		connection.connect(address);
-		System.out.println("bye!");
 	}
 }
